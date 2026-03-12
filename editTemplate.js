@@ -78,9 +78,7 @@ export function editTemplateFn() {
             <h2>Skills</h2>
             <ul>
                 <li>${allinput[4].value}</li>
-                // <li>CSS</li>
-                // <li>JavaScript</li>
-                // <li>React</li>
+              
             </ul>
         </section>
 
@@ -89,13 +87,10 @@ export function editTemplateFn() {
 
             <div class="project">
                 <h4>${allinput[5].value}</h4>
-                // <p>Web app to manage product inventory.</p>
+             
             </div>
 
-            // <div class="project">
-            //     <h4>Music Player</h4>
-            //     <p>JavaScript based music player.</p>
-            // </div>
+         
 
         </section>
 
