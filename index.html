@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <main>
+        <div class="inner-main">
+            <div class="leftside">
+                <div class="logo">
+                    <i class="ri-file-list-3-fill"></i>
+                    <h3>AI Resume Builder</h3>
+                </div>
+                <div class="menu">
+                    <h3> <i class="ri-home-5-fill"></i>Dashboard</h3>
+                    <h3 class="myResumeBtn"><i class="ri-id-card-fill"></i>My Resumes</h3>
+                    <h3><i class="ri-folder-add-fill"></i>Create Resume</h3>
+                    <h3><i class="ri-layout-grid-fill"></i>Templates</h3>
+                    <h3><i class="ri-painting-ai-fill"></i>AI Tips</h3>
+                    <h3><i class="ri-settings-5-fill"></i>Settings</h3>
+                </div>
+            </div>
+            <div class="rigthside">
+                <div class="dashboard">
+                    <div class="topbar">
+
+                        <input class="search" placeholder="Search resumes...">
+
+                        <div class="profile">
+                            <i class="ri-notification-3-fill"></i>
+                            <img src="https://i.pravatar.cc/40">
+                            <span>Aryan</span>
+                        </div>
+
+                    </div>
+
+                    <div class="stats">
+
+                        <div class="card">
+                            <i class="ri-file-list-3-fill"></i>
+                            <div>
+                                <p>Total Resumes</p>
+                                <h2>5</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <i class="ri-layout-grid-fill"></i>
+                            <div>
+                                <p>Templates Used</p>
+                                <h2>3</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <i class="ri-download-2-fill"></i>
+                            <div>
+                                <p>PDF Downloads</p>
+                                <h2>12</h2>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2 class="section-title">Recent Resumes</h2>
+
+                    <div class="resume-list">
+
+                        <div class="resume-card">
+                            <h3>Frontend Developer Resume</h3>
+                            <p>Last Edited: Today</p>
+
+                            <div class="buttons">
+                                <button class="edit">Edit</button>
+                                <button class="download">Download</button>
+                                <button class="delete">Delete</button>
+                            </div>
+
+                        </div>
+
+                        <div class="resume-card">
+                            <h3>Marketing Specialist CV</h3>
+                            <p>Last Edited: 2 Days Ago</p>
+
+                            <div class="buttons">
+                                <button class="edit">Edit</button>
+                                <button class="download">Download</button>
+                                <button class="delete">Delete</button>
+                            </div>
+
+                        </div>
+
+                        <div class="resume-card">
+                            <h3>Project Manager Resume</h3>
+                            <p>Last Edited: 1 Week Ago</p>
+
+                            <div class="buttons">
+                                <button class="edit">Edit</button>
+                                <button class="download">Download</button>
+                                <button class="delete">Delete</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="actions">
+
+                        <button class="create">
+                            <i class="ri-add-line"></i>
+                            Create New Resume
+                        </button>
+
+                        <button class="browse">
+                            <i class="ri-layout-grid-fill"></i>
+                            Browse Templates
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="allResume">
+            <div class="resume">
+
+                <!-- HEADER -->
+                <header>
+                    <h1 id="name"></h1>
+                    <p id="role"></p>
+
+                    <div class="contact">
+                        <span id="email"></span>
+                        <span id="phone"></span>
+                        <span id="location"></span>
+                    </div>
+                </header>
+
+
+                <!-- SKILLS -->
+                <section>
+                    <h2>Skills</h2>
+                    <ul id="skills"></ul>
+                </section>
+
+
+                <!-- EDUCATION -->
+                <section>
+                    <h2>Education</h2>
+                    <div id="education"></div>
+                </section>
+
+
+                <!-- PROJECTS -->
+                <section>
+                    <h2>Projects</h2>
+                    <div id="projects"></div>
+                </section>
+
+            </div>
+        </div>
+        <div class="container">
+
+            <!-- FORM -->
+            <div class="form-section">
+
+                <h2>Create Resume</h2>
+
+                <input type="text" id="name" placeholder="Full Name">
+
+                <input type="text" id="role" placeholder="Role">
+
+                <input type="email" id="email" placeholder="Email">
+
+                <input type="text" id="phone" placeholder="Phone">
+
+                <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+
+                <textarea id="projects" placeholder="Projects"></textarea>
+
+                <button id="generate">Generate Resume</button>
+
+            </div>
+
+
+            <!-- RESUME PREVIEW -->
+
+            <!-- <div class="resume-section">
+
+                <div class="resume">
+
+                    <h1 id="r-name">Your Name</h1>
+                    <p id="r-role">Role</p>
+
+                    <div class="contact">
+                        <span id="r-email"></span>
+                        <span id="r-phone"></span>
+                    </div>
+
+                    <h3>Skills</h3>
+                    <ul id="r-skills"></ul>
+
+                    <h3>Projects</h3>
+                    <p id="r-projects"></p>
+
+                </div>
+
+            </div> -->
+
+        </div>
+
+        <div class="templates">
+
+            <!-- Template Card -->
+            <div class="card">
+
+                <img src="./_ynODM16gGYavULaxRHh2o9sW42PZOl4js7huKvARFgpQo5Ojs6fXUu6CLvqvWoEAIOxxMCxIgYmlQHqG5Lmp90eEcCrLkMY1tsNZFrEDx4.jpeg"
+                    alt="template preview">
+
+                <h3>Modern Resume</h3>
+
+                <div class="card-buttons">
+                    <a href="temp1.html" class="preview">Preview</a>
+                    <a class="edittembtn">Edit</a>
+                </div>
+
+            </div>
+
+
+            <!-- Template Card -->
+            <div class="card">
+
+                <img src="./ALEXIS-Free-Blue-Sidebar-Resume-Template-ResumGO.png" alt="template preview">
+
+                <h3>Sidebar Resume</h3>
+
+                <div class="card-buttons">
+                    <a href="temp2.html" class="preview">Preview</a>
+                    <a class="edittembtn">Edit</a>
+                </div>
+
+            </div>
+
+
+            <!-- Template Card -->
+            <div class="card">
+
+                <img src="./DXUZ2b74KGBGSBYyivMXcfQGfO9KzRJ8x2oHRVLT-IiQtSHzOBsOl_pSOvka4Q-4wDwSYMmAt65ExnLKxxQxCH97YPxYqxTHusvOGpg32Y8.jpeg"
+                    alt="template preview">
+
+                <h3>Creative Resume</h3>
+
+                <div class="card-buttons">
+                    <a href="temp3.html" class="preview">Preview</a>
+                    <a class="edittembtn">Edit</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="allForm">
+            <div class="tempeditForm">
+                <h2>Create Resume</h2>
+                <button class="closeBtn">✕</button>
+
+
+                <input type="text" id="name" placeholder="Full Name">
+
+                <input type="text" id="role" placeholder="Role">
+
+                <input type="email" id="email" placeholder="Email">
+
+                <input type="text" id="phone" placeholder="Phone">
+
+                <textarea id="skills" placeholder="Skills (comma separated)">
+
+                </textarea>
+
+                <textarea id="projects" placeholder="Projects"></textarea>
+
+                <button id="generatee">Generate Resume</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
