@@ -448,7 +448,7 @@ ul {
     color: white;
 }
 
-.resume1,
+
 .resume3,
 .resume2 {
     width: 800px;
@@ -459,21 +459,20 @@ ul {
 
 /* HEADER */
 
-.resume1 header,
 .resume3 header,
 .resume2 header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.resume1 h1,
+
 .resume3 h1,
 .resume2 h2 {
     font-size: 34px;
     margin-bottom: 5px;
 }
 
-.resume1 header p,
+
 .resume3 header p,
 .resume2 header p {
     font-size: 18px;
@@ -487,6 +486,130 @@ ul {
     gap: 20px;
     color: #555;
     font-size: 14px;
+}
+
+.resume1 {
+    width: 800px;
+    margin: 30px auto;
+    background: #f5f5f5;
+    padding: 40px 50px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+
+.resume1 header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume1 header h1 {
+    font-size: 34px;
+    margin-bottom: 5px;
+}
+
+.resume1 header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* CONTACT */
+
+.contact {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* SECTION */
+
+.resume1 section {
+    margin-top: 30px;
+}
+
+.resume1 section h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+/* SKILLS LIST */
+
+.resume1 ul {
+    padding-left: 20px;
+}
+
+.resume1 ul li {
+    margin-bottom: 6px;
+}
+
+/* PROJECT */
+
+.project {
+    margin-top: 10px;
+}
+
+.project h4 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.project p {
+    color: #444;
+}
+
+/* CONTACT */
+
+.contact {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* SECTION */
+
+.resume1 section {
+    margin-top: 30px;
+}
+
+.resume1 section h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+/* SKILLS LIST */
+
+.resume1 ul {
+    padding-left: 20px;
+}
+
+.resume1 ul li {
+    margin-bottom: 6px;
+}
+
+/* PROJECT */
+
+.project {
+    margin-top: 10px;
+}
+
+.project h4 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.project p {
+    color: #444;
 }
 
 /* SECTION */
