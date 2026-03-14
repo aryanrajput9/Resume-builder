@@ -137,37 +137,31 @@ export function editTemplateFn() {
             div.innerHTML = `
             <div class="resume2">
 
-                     <header>
-                    <h1>${data.name}</h1>
+                <aside>
+
+                    <h2>${data.name}</h2>
                     <p>${data.role}</p>
 
-                    <div class="contact">
-                        <span>Email: ${data.email}</span>
-                        <span>Phone: +91 ${data.phone}</span>
-                    </div>
+                    <h3>Skills</h3>
 
-                </header>
-
-                <section>
-                    <h2>Skills</h2>
                     <ul>
                         <li>${data.skills}</li>
                     </ul>
-                </section>
 
-                <section>
+                </aside>
+
+                <main>
+
                     <h2>Projects</h2>
 
-                    <div class="project">
+                    <div>
                         <h4>${data.project}</h4>
                     </div>
 
-                </section>
-
+                </main>
 
             </div>
             `;
-
         }
 
         allResume.append(div);
