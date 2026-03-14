@@ -47,7 +47,7 @@
                             <i class="ri-file-list-3-fill"></i>
                             <div>
                                 <p>Total Resumes</p>
-                                <h2>5</h2>
+                                <h2 id="allResumeCount">1</h2>
                             </div>
                         </div>
 
@@ -63,7 +63,7 @@
                             <i class="ri-download-2-fill"></i>
                             <div>
                                 <p>PDF Downloads</p>
-                                <h2>12</h2>
+                                <h2 class="pdfDownload">0</h2>
                             </div>
                         </div>
 
@@ -78,36 +78,14 @@
                             <p>Last Edited: Today</p>
 
                             <div class="buttons">
-                                <button class="edit">Edit</button>
                                 <button class="download">Download</button>
                                 <button class="delete">Delete</button>
                             </div>
 
                         </div>
 
-                        <div class="resume-card">
-                            <h3>Marketing Specialist CV</h3>
-                            <p>Last Edited: 2 Days Ago</p>
 
-                            <div class="buttons">
-                                <button class="edit">Edit</button>
-                                <button class="download">Download</button>
-                                <button class="delete">Delete</button>
-                            </div>
 
-                        </div>
-
-                        <div class="resume-card">
-                            <h3>Project Manager Resume</h3>
-                            <p>Last Edited: 1 Week Ago</p>
-
-                            <div class="buttons">
-                                <button class="edit">Edit</button>
-                                <button class="download">Download</button>
-                                <button class="delete">Delete</button>
-                            </div>
-
-                        </div>
 
                     </div>
 
@@ -220,7 +198,7 @@
         <div class="templates">
 
             <!-- Template Card -->
-            <div class="card">
+            <div class="card active">
 
                 <img src="./_ynODM16gGYavULaxRHh2o9sW42PZOl4js7huKvARFgpQo5Ojs6fXUu6CLvqvWoEAIOxxMCxIgYmlQHqG5Lmp90eEcCrLkMY1tsNZFrEDx4.jpeg"
                     alt="template preview">
@@ -293,6 +271,7 @@
 
 
     <script type="module" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 import { resmueData } from "./resumedat.js";
 import { editTemplateFn } from "./editTemplate.js";
+import { geneteResume } from "./generateResume.js";
 
 let menu = document.querySelector(".menu");
 let resume = document.querySelector(".resume");
@@ -7,10 +8,13 @@ let rightSide = document.querySelector(".rigthside");
 let dashboard = document.querySelector(".dashboard");
 let createResume = document.querySelector(".container");
 let Alltemplates = document.querySelector(".templates");
-let allResume = document.querySelector(".allResume")
+let allResume = document.querySelector(".allResume");
+console.log(allResume)
 
 
 let menuChild = Array.from(menu.children);
+
+geneteResume()
 
 
 
@@ -28,7 +32,9 @@ menuChild.forEach((elem, index) => {
         elem.addEventListener("click", () => {
             resume.style.display = "none";
             dashboard.style.display = "block";
-            Alltemplates.style.display = "none"
+            Alltemplates.style.display = "none";
+            allResume.style.display = "none";
+            createResume.style.display = "none"
             resmueData()
             rightSide.append(resume)
         })
@@ -37,7 +43,9 @@ menuChild.forEach((elem, index) => {
 
         elem.addEventListener("click", () => {
             resume.style.display = "block";
-            allResume.style.display = "block"
+            allResume.style.display = "flex";
+            allResume.style.flexDirection = "column";
+            allResume.style.gap = "20px"
             dashboard.style.display = "none";
             createResume.style.display = "none";
             Alltemplates.style.display = "none"
@@ -52,7 +60,7 @@ menuChild.forEach((elem, index) => {
     if (index === 2) {
 
         elem.addEventListener("click", () => {
-            createResume.style.display = "flex"
+            createResume.style.display = "flex";
             allResume.style.display = "none"
             resume.style.display = "none";
             dashboard.style.display = "none";

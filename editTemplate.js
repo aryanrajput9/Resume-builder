@@ -1,104 +1,199 @@
 export function editTemplateFn() {
+
     let edittemBtn = document.querySelectorAll(".edittembtn");
-    let allResume = document.querySelector(".allResume")
-
-    let rightSide = document.querySelector(".rigthside");
+    let allResume = document.querySelector(".allResume");
     let tempeditForm = document.querySelector(".tempeditForm");
-    let resume1 = document.querySelector(".resume1")
-
-
-
-    console.log(edittemBtn);
+    let resumelist = document.querySelector(".resume-list");
+    let templates = document.querySelector(".templates");
     let generate = document.querySelector("#generatee");
-    let allinput = tempeditForm.querySelectorAll(["input", "textarea"])
+    let allResumeCount = document.querySelector("#allResumeCount");
 
-    console.log(allinput)
+    let allinput = tempeditForm.querySelectorAll("input, textarea");
+    let closeBtn = document.querySelector(".closeBtn");
+    let pdfDownload = document.querySelector(".pdfDownload")
 
-    edittemBtn.forEach((elem, index) => {
+    let savedResumes = JSON.parse(sessionStorage.getItem("resumes")) || [];
 
-        if (index === 0) {
+    // form open
+    edittemBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            tempeditForm.style.display = "flex";
+        });
+    });
 
-            elem.addEventListener("click", () => {
-                let tempeditForm = document.querySelector(".tempeditForm");
-                tempeditForm.style.display = "flex";
-                let closeBtn = document.querySelector(".closeBtn");
-                closeBtn.addEventListener("click", () => {
-                    tempeditForm.style.display = "none";
+    // form close
+    closeBtn.addEventListener("click", () => {
+        tempeditForm.style.display = "none";
+    });
 
-                })
+    // template select
+    let cards = document.querySelectorAll(".card");
 
-            })
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
 
-        }
-        if (index === 1) {
+            cards.forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
 
-            elem.addEventListener("click", () => {
-                let tempeditForm = document.querySelector(".tempeditForm");
-                tempeditForm.style.display = "flex";
-                let closeBtn = document.querySelector(".closeBtn");
-                closeBtn.addEventListener("click", () => {
-                    tempeditForm.style.display = "none"
-                })
+        });
+    });
 
-            })
+    // existing resumes load
+    savedResumes.forEach((data) => {
+        createResume(data);
+    });
 
-        }
-        if (index === 2) {
-
-            elem.addEventListener("click", () => {
-                let tempeditForm = document.querySelector(".tempeditForm");
-                tempeditForm.style.display = "flex";
-                let closeBtn = document.querySelector(".closeBtn");
-                closeBtn.addEventListener("click", () => {
-                    tempeditForm.style.display = "none"
-                })
-            })
-
-        }
-
-
-    })
+    allResumeCount.innerText = savedResumes.length;
 
     generate.addEventListener("click", () => {
 
+        for (let input of allinput) {
+            if (input.value === "") {
+                alert("Please fill the form");
+                return;
+            }
+        }
+
+        let resumeData = {
+            name: allinput[0].value,
+            role: allinput[1].value,
+            email: allinput[2].value,
+            phone: allinput[3].value,
+            skills: allinput[4].value,
+            project: allinput[5].value,
+            template: cards[0].classList.contains("active") ? 1 : 2
+        };
+
+        savedResumes.push(resumeData);
+
+        sessionStorage.setItem("resumes", JSON.stringify(savedResumes));
+
+        createResume(resumeData);
+
+        allResumeCount.innerText = savedResumes.length;
+
+        tempeditForm.style.display = "none";
+
+    });
+
+    function createResume(data) {
+
+        // resume list card
+        let resumeDiv = document.createElement("div");
+        resumeDiv.classList.add("resume-card");
+
+        resumeDiv.innerHTML = `
+            <h3>${data.role}</h3>
+            <p>${data.name}</p>
+
+            <div class="buttons">
+                <button class="download">Download</button>
+                <button class="deletee">Delete</button>
+            </div>
+        `;
+
+        resumelist.append(resumeDiv);
+
+        // resume preview
         let div = document.createElement("div");
-        div.innerHTML = `<div class="resume1">
 
-        <header>
-            <h1 id="name">${allinput[0].value}</h1>
-            <p id="role">${allinput[1].value}</p>
+        if (data.template === 1) {
 
-            <div class="contact">
-                <span>Email: ${allinput[2].value}</span>
-                <span>Phone: +91 ${allinput[3].value}</span>
+            div.innerHTML = `
+            <div class="resume1">
+
+                <header>
+                    <h1>${data.name}</h1>
+                    <p>${data.role}</p>
+
+                    <div class="contact">
+                        <span>Email: ${data.email}</span>
+                        <span>Phone: +91 ${data.phone}</span>
+                    </div>
+
+                </header>
+
+                <section>
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>${data.skills}</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Projects</h2>
+
+                    <div class="project">
+                        <h4>${data.project}</h4>
+                    </div>
+
+                </section>
+
             </div>
-        </header>
+            `;
 
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>${allinput[4].value}</li>
-              
-            </ul>
-        </section>
+        } else {
 
-        <section>
-            <h2>Projects</h2>
+            div.innerHTML = `
+            <div class="resume2">
 
-            <div class="project">
-                <h4>${allinput[5].value}</h4>
-             
+                <aside>
+
+                    <h2>${data.name}</h2>
+                    <p>${data.role}</p>
+
+                    <h3>Skills</h3>
+
+                    <ul>
+                        <li>${data.skills}</li>
+                    </ul>
+
+                </aside>
+
+                <main>
+
+                    <h2>Projects</h2>
+
+                    <div>
+                        <h4>${data.project}</h4>
+                    </div>
+
+                </main>
+
             </div>
-
-         
-
-        </section>
-
-    </div>`
-
+            `;
+        }
 
         allResume.append(div);
 
+        // delete button
+        let deleteBtn = resumeDiv.querySelector(".deletee");
 
-    })
+        deleteBtn.addEventListener("click", () => {
+
+            resumeDiv.remove();
+            div.remove();
+
+            savedResumes = savedResumes.filter((r) => r !== data);
+
+            sessionStorage.setItem("resumes", JSON.stringify(savedResumes));
+
+            allResumeCount.innerText = savedResumes.length;
+
+        });
+
+        // download button
+        let downloadBtn = resumeDiv.querySelector(".download");
+
+        let pdfCount = 0;
+        downloadBtn.addEventListener("click", () => {
+
+            html2pdf().from(div).save("resume.pdf");
+            pdfCount++
+            pdfDownload.innerText = pdfCount
+
+        });
+
+    }
+
 }

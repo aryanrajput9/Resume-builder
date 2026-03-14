@@ -160,6 +160,7 @@ main {
 
 .resume-list {
     display: flex;
+    overflow-x: auto;
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -352,6 +353,13 @@ ul {
 .resume-section {
     width: 60%;
 }
+
+/* 
+.allResume {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+} */
 
 .resume {
     background: white;
