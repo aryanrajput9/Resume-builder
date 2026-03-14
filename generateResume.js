@@ -29,30 +29,36 @@ export function geneteResume() {
 
         let div = document.createElement("div");
 
-        div.innerHTML = `<div class="resume2">
+        div.innerHTML = `   <div class="resume4">
+         <header>
+                    <h1>${inputs[0].value}</h1>
+                    <p>${inputs[1].value}</p>
 
-        <aside>
+                    <div class="contact">
+                        <span>Email: ${inputs[2].value}</span>
+                        <span>Phone: +91 ${inputs[3].value}</span>
+                    </div>
 
-            <h2>${inputs[0].value}</h2>
-            <p>${inputs[1].value}</p>
-             <p>${inputs[2].value}</p>
+                </header>
 
-            <h3>Skills</h3>
+                <section>
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>${inputs[4].value}</li>
+                    </ul>
+                </section>
 
-            <ul>
-                <li>${inputs[4].value}</li>
-                
-            </ul>
+                <section>
+                    <h2>Projects</h2>
 
-        </aside>
+                    <div class="project">
+                        <h4>${inputs[5].value}</h4>
+                    </div>
 
-        <main>
+                </section>
 
-            <h2>${inputs[5].value}</h2>
-
-        </main>
-
-    </div>`
+                </div>
+`
 
         // delete button
         let deleteBtn = resumeDiv.querySelector(".deletee");

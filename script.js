@@ -84,13 +84,13 @@ menuChild.forEach((elem, index) => {
     if (index === 4) {
 
         elem.addEventListener("click", () => {
-            collectIndex("block", "red")
+            alert("update soon...")
         })
     }
     if (index === 5) {
 
         elem.addEventListener("click", () => {
-            collectIndex("block", "red")
+            alert("update soon...")
         })
     }
 
